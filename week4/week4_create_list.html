@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>List Generator</h1>
+    
+
+    <input id="new-list-item-text">
+
+    <button id="add-new-item">Add new list item</button>
+
+    <ul id="list-of-items">
+        <!--empty, will add elements with JS-->
+    </ul>
+
+    <button id="clear-list">Clear</button>
+
+
+    <script>
+
+        //find the HTML input with ID new-list-item-text and making a variable
+        //in javascript to represent the HTML element
+        //we don't have to specify that it's a button or an input
+        
+        let newListItemTextInputElement = document.querySelector('#new-list-item-text')
+        
+        let addNewItemButtonElement = document.querySelector('#add-new-item')
+
+        let listOfItemsElement  = document.querySelector('#list-of-items')
+
+        let clearButton = document.querySelector('#clear-list')
+
+        clearButton.addEventListener('click', function() {
+            listOfItemsElement.innerHTML = ''
+
+        })
+
+        addNewItemButtonElement.addEventListener('click', function() {
+
+            
+            
+            let newInputText = newListItemTextInputElement.value
+            console.log(newInputText)
+
+            let newListItemElement = document.createElement('li')
+
+            newListItemElement.innerHTML = newInputText
+
+            listOfItemsElement.appendChild(newListItemElement)
+
+            newListItemTextInputElement.value = ''
+
+
+
+            
+        } )
+        
+    </script>
+
+
+
+</body>
+</html>
